@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<model name="ecommerce" package="com.github.apuex.sales">
+  <entity name="product" aggregationRoot="true">
+    <field no="1" name="product_id" type="string" length="64" required="true"/>
+    <field no="2" name="product_name" type="string" length="64" required="true" aggregation="true"/>
+    <field no="3" name="product_unit" type="string" length="64" required="true" aggregation="true"/>
+    <field no="4" name="unit_price" type="double" required="true" aggregation="true"/>
+    <field no="5" name="record_time" type="double" transient="true"/>
+    <field no="6" name="quantity_sold" type="double" transient="true"/>
+    <primaryKey name="product_pk">
+      <field name="product_id"/>
+    </primaryKey>
+    <aggregation name="product_sales">
+      <field no="1" name="product_name"/>
+      <field no="2" name="record_time"/>
+      <field no="3" name="quantity_sold"/>
+    </aggregation>
+  </entity>
+  <entity name="order" aggregationRoot="true">
+    <field no="1" name="order_id" type="string" length="64" required="true"/>
+    <field no="2" name="order_time" type="timestamp" required="true"/>
+    <field no="3" name="order_items" type="array" valueType="order_item" aggregation="true"/>
+    <primaryKey name="order_pk">
+      <field name="order_id"/>
+    </primaryKey>
+  </entity>
+  <entity name="order_item" aggregationTo="order">
+    <field no="1" name="order_id" type="string" length="64" required="true"/>
+    <field no="2" name="product_id" type="string" length="64" required="true"/>
+    <field no="3" name="item_name" joinKey="order_item_product_fk" refField="product_name"/>
+    <field no="4" name="unit_price" joinKey="order_item_product_fk" refField="unit_price"/>
+    <field no="5" name="order_quantity" type="double" required="true"/>
+    <primaryKey name="order_item_pk">
+      <field name="order_id"/>
+      <field name="product_id"/>
+    </primaryKey>
+    <foreignKey name="order_item_fk" refEntity="order">
+      <field name="order_id" refField="order_id"/>
+    </foreignKey>
+    <foreignKey name="order_item_product_fk" refEntity="product">
+      <field name="product_id" refField="product_id"/>
+    </foreignKey>
+  </entity>
+</model>
