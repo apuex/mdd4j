@@ -27,6 +27,7 @@ they are no more than just different forms/representations of one common busines
 
 - entities have many forms
 -- persistence, value object in application service layer, value object in front end(PC browser, mobile devices, etc.) are the 'same' but in different forms of reprensentation.
-- application constants. constants in business level, also have many forms of representation: javascript constants, java(or any other programming languages), rdbms...
+- application constants. constants in business level, also have many forms of representation
+-- javascript constants, java(or any other programming languages), rdbms...
 each of those constants share the same name, have the same value, but in different forms.
 
