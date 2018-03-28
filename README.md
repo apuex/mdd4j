@@ -16,7 +16,6 @@ There're many aspects to concern when building enterprise application.
 - Security, AAA
 - Application service.
 - data access/infrasture integration.
-- Query & reporting.
 - ...
 
 each has it's own tools specified to solve. 
