@@ -1,2 +1,25 @@
-*.class
+# Simple Build Tool
+# http://www.scala-sbt.org/release/docs/Getting-Started/Directories.html#configuring-version-control
+
+dist/*
+target/
+bin/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+.cache
+.cache-main
+.cache-tests
+.lib/
+.idea/
+
+.classpath
+.project
+.settings
+
 *.log
+
+akka-model-gen
+workspace
