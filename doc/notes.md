@@ -11,7 +11,19 @@ each pool requires a minimum number of connections.
 When times the number of nodes, the total number of connections may be very large.
 The excerssive number connections offers no help to database performance, just lags it behind.
 
-So, when depolying a large cluster, just limit persistence service to a limited number of nodes.
+So, when depolying a large cluster, it is better that just limit persistence service to a limited number of nodes, for availability reasons, not performance.
+
+## The interface for data access service
+
+Data access service, or the integration layer, is often implemented as DAO, and DAO is implemented as a set of procedure calls on interfaces.
+While in distributed environments, DAO of this kind has to be remote procedure calls. The problems of RPC in nature is
+- Tightly coupled.
+- Synchronized.
+- Not scale well compares to message based.
+- Not equivalent to LPC.
+- ...
+
+
 
 
 
