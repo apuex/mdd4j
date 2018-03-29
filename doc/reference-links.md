@@ -6,4 +6,4 @@
 - [Multilevel Undo and Redo Implementation in C#](https://www.codeproject.com/Articles/33371/Multilevel-Undo-and-Redo-Implementation-in-C-Part)
 - [Adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern)
 - [Bridge pattern](https://en.wikipedia.org/wiki/Bridge_pattern)
-
+- [Scalable C - Writing Large-Scale Distributed C](https://github.com/booksbyus/scalable-c)
