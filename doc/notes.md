@@ -11,7 +11,7 @@ each pool requires a minimum number of connections.
 When times the number of nodes, the total number of connections may be very large.
 The excerssive number connections offers no help to database performance, just lags it behind.
 
-Therefore, when depolying a large cluster, just limit persistence service to a limited number of nodes.
+So, when depolying a large cluster, just limit persistence service to a limited number of nodes.
 
 
 
