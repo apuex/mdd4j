@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<model name="ecommerce">
+    <shared-kernel name="id_management" include="02-id-management.xml"/>
+    <bounded-context name="sales" include="03-sales.xml"/>
+    <bounded-context name="storage" include="04-storage.xml"/>
+    <bounded-context name="procurement" include="05-procurement.xml"/>
+    <bounded-context name="reporting" include="06-reporting.xml"/>
+    <context-mapping from="procurement" to="storage">
+        <map-entity name="product" to-name="sku">
+            <field name="id" to-name="id"/>
+            <field name="name" to-name="name"/>
+        </map-entity> 
+    </context-mapping>
+    <context-mapping from="storage" to="sales">
+        <map-entity name="sku" to-name="product">
+            <field name="id" to-name="id"/>
+            <field name="name" to-name="name"/>
+        </map-entity> 
+    </context-mapping>
+    <context-mapping from="sales" to="reporting">
+        <map-entity name="product" to-name="product">
+            <field name="id" to-name="id"/>
+            <field name="name" to-name="name"/>
+        </map-entity> 
+    </context-mapping>
+</model>
